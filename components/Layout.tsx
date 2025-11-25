@@ -1,0 +1,180 @@
+import React, { useState } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Menu, X, Phone, MessageCircle, Facebook, Instagram, Heart } from 'lucide-react';
+
+const navItems = [
+  { label: 'Services', path: '/services' },
+  { label: 'Our Helpers', path: '/helpers' },
+  { label: 'How It Works', path: '/how-it-works' },
+  { label: 'About Us', path: '/about' },
+  { label: 'FAQ', path: '/faq' },
+];
+
+export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <div className="flex flex-col min-h-screen font-sans">
+      {/* Top Bar */}
+      <div className="bg-brand-navy text-white py-2 px-4 text-sm text-center md:text-right md:px-8">
+        <span className="opacity-90">Singapore-Registered Agency | License: 12C3456</span>
+      </div>
+
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20 items-center">
+            {/* Logo */}
+            <Link to="/" className="flex flex-col" onClick={closeMenu}>
+              <span className="font-serif text-2xl font-bold text-brand-navy">Clean RK</span>
+              <span className="text-xs text-brand-gold tracking-wider uppercase">Maid Service Agency</span>
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors ${
+                      isActive ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <Link to="/contact">
+                <button className="bg-brand-navy text-white px-5 py-2 rounded hover:bg-[#132c46] transition text-sm font-semibold">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-brand-navy p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Nav Dropdown */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div className="px-4 pt-2 pb-6 space-y-1">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={closeMenu}
+                  className={({ isActive }) =>
+                    `block px-3 py-3 rounded-md text-base font-medium ${
+                      isActive ? 'text-brand-gold bg-brand-cream' : 'text-brand-charcoal'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <Link 
+                to="/contact" 
+                onClick={closeMenu}
+                className="block w-full text-center mt-4 bg-brand-navy text-white px-5 py-3 rounded font-semibold"
+              >
+                Contact Us
+              </Link>
+              <Link 
+                to="/contact?type=helper" 
+                onClick={closeMenu}
+                className="block w-full text-center mt-2 border border-brand-gold text-brand-gold px-5 py-3 rounded font-semibold"
+              >
+                Join as a Helper
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-grow">
+        {children}
+      </main>
+
+      {/* WhatsApp Floating Button */}
+      <a 
+        href="https://wa.me/6512345678" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-105 z-40 flex items-center gap-2"
+      >
+        <MessageCircle size={24} />
+        <span className="hidden md:inline font-semibold">Chat with Us</span>
+      </a>
+
+      {/* Footer */}
+      <footer className="bg-brand-navy text-white pt-12 pb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div className="col-span-1 md:col-span-1">
+              <h3 className="font-serif text-xl font-bold mb-4">Clean RK</h3>
+              <p className="text-brand-beige text-sm leading-relaxed mb-4">
+                Connecting compassionate Indonesian helpers with Singapore families. Built on trust, transparency, and heart.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-brand-gold hover:text-white transition"><Facebook size={20} /></a>
+                <a href="#" className="text-brand-gold hover:text-white transition"><Instagram size={20} /></a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-4 text-brand-gold">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-brand-beige">
+                <li><Link to="/services" className="hover:text-white">Our Services</Link></li>
+                <li><Link to="/helpers" className="hover:text-white">Our Helpers</Link></li>
+                <li><Link to="/how-it-works" className="hover:text-white">Process</Link></li>
+                <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-4 text-brand-gold">Contact</h4>
+              <ul className="space-y-2 text-sm text-brand-beige">
+                <li className="flex items-center gap-2"><Phone size={16} /> +65 1234 5678</li>
+                <li className="flex items-center gap-2"><MessageCircle size={16} /> WhatsApp Us</li>
+                <li>123 Orchard Road, #05-01<br/>Singapore 238888</li>
+                <li className="text-xs mt-2 opacity-75">Mon-Sat: 10am - 7pm</li>
+              </ul>
+            </div>
+
+            <div className="bg-[#132c46] p-6 rounded-lg">
+              <h4 className="font-bold text-lg mb-2 flex items-center gap-2">
+                <Heart className="text-brand-gold" size={20} fill="#D4A574" />
+                Are you a Helper?
+              </h4>
+              <p className="text-sm text-brand-beige mb-4">
+                We are looking for compassionate helpers. No agency fees for helpers.
+              </p>
+              <Link to="/contact?type=helper">
+                <button className="w-full bg-brand-gold text-brand-navy font-bold py-2 rounded hover:bg-white transition">
+                  Join Our Family
+                </button>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
+            <p>&copy; {new Date().getFullYear()} Clean RK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
