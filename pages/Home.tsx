@@ -72,7 +72,7 @@ export const Home: React.FC = () => {
             {/* Background Pattern/Map Effect */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
 
-            <div className="relative z-10 md:w-2/3">
+            <div className="relative z-10 md:w-2/3 flex flex-col items-center md:items-start text-center md:text-left">
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">IRK Global — Intelligence Across Borders.</h2>
               <p className="text-brand-beige text-lg leading-relaxed mb-6">
                 Providing intelligent workforce solutions and manpower services worldwide.
@@ -84,9 +84,13 @@ export const Home: React.FC = () => {
               </Link>
             </div>
             <div className="relative z-10 md:w-1/3 flex justify-center">
-              {/* Placeholder for Global/Map Visual */}
-              <div className="w-48 h-48 bg-brand-gold/20 rounded-full flex items-center justify-center border-4 border-brand-gold/30">
-                <span className="text-brand-gold font-bold text-xl uppercase tracking-widest">Global</span>
+              {/* 3D Global Visual */}
+              <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+                <img
+                  src="/global-globe-3d.png"
+                  alt="IRK Global Reach"
+                  className="w-full h-full object-contain filter drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
