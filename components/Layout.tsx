@@ -26,11 +26,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
+          <div className="flex justify-between h-32 items-center">
             {/* Logo */}
-            <Link to="/" className="flex flex-col" onClick={closeMenu}>
-              <span className="font-serif text-2xl font-bold text-brand-navy">Clean RK</span>
-              <span className="text-xs text-brand-gold tracking-wider uppercase">Maid Service Agency</span>
+            <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
+              <img src="/irk-logo.png" alt="IRK Logo" className="h-28 w-auto" />
+              <span className="text-2xl text-brand-gold tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
             </Link>
 
             {/* Desktop Nav */}
@@ -40,8 +40,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors ${
-                      isActive ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
+                    `text-sm font-medium transition-colors ${isActive ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
                     }`
                   }
                 >
@@ -76,23 +75,22 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   to={item.path}
                   onClick={closeMenu}
                   className={({ isActive }) =>
-                    `block px-3 py-3 rounded-md text-base font-medium ${
-                      isActive ? 'text-brand-gold bg-brand-cream' : 'text-brand-charcoal'
+                    `block px-3 py-3 rounded-md text-base font-medium ${isActive ? 'text-brand-gold bg-brand-cream' : 'text-brand-charcoal'
                     }`
                   }
                 >
                   {item.label}
                 </NavLink>
               ))}
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 onClick={closeMenu}
                 className="block w-full text-center mt-4 bg-brand-navy text-white px-5 py-3 rounded font-semibold"
               >
                 Contact Us
               </Link>
-              <Link 
-                to="/contact?type=helper" 
+              <Link
+                to="/contact?type=helper"
                 onClick={closeMenu}
                 className="block w-full text-center mt-2 border border-brand-gold text-brand-gold px-5 py-3 rounded font-semibold"
               >
@@ -109,9 +107,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </main>
 
       {/* WhatsApp Floating Button */}
-      <a 
-        href="https://wa.me/6512345678" 
-        target="_blank" 
+      <a
+        href="https://wa.me/6512345678"
+        target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-105 z-40 flex items-center gap-2"
       >
@@ -124,7 +122,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-1">
-              <h3 className="font-serif text-xl font-bold mb-4">Clean RK</h3>
+              <h3 className="font-serif text-xl font-bold mb-4">IRK</h3>
               <p className="text-brand-beige text-sm leading-relaxed mb-4">
                 Connecting compassionate Indonesian helpers with Singapore families. Built on trust, transparency, and heart.
               </p>
@@ -149,7 +147,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-2 text-sm text-brand-beige">
                 <li className="flex items-center gap-2"><Phone size={16} /> +65 1234 5678</li>
                 <li className="flex items-center gap-2"><MessageCircle size={16} /> WhatsApp Us</li>
-                <li>123 Orchard Road, #05-01<br/>Singapore 238888</li>
+                <li>123 Orchard Road, #05-01<br />Singapore 238888</li>
                 <li className="text-xs mt-2 opacity-75">Mon-Sat: 10am - 7pm</li>
               </ul>
             </div>
@@ -169,9 +167,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </Link>
             </div>
           </div>
-          
+
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
-            <p>&copy; {new Date().getFullYear()} Clean RK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+            <p>&copy; {new Date().getFullYear()} IRK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
           </div>
         </div>
       </footer>

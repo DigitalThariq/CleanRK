@@ -20,25 +20,27 @@ const ServiceCardShort = ({ title, desc, link }: { title: string, desc: string, 
 export const Home: React.FC = () => {
   return (
     <div className="w-full">
-      {/* Hero Section */}
+      {/* Hero Section – Family / FDW Focus */}
       <section className="relative bg-brand-navy text-white overflow-hidden">
         {/* Abstract Background Overlay */}
         <div className="absolute inset-0 bg-brand-navy/80 z-10"></div>
-        <div 
-            className="absolute inset-0 bg-cover bg-center z-0" 
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1920&q=80")' }} // Modern Singapore-style apartment
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1920&q=80")' }} // Modern Singapore-style apartment
         ></div>
-        
+
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-block bg-brand-gold/20 text-brand-gold border border-brand-gold/30 rounded-full px-4 py-1 text-sm font-semibold mb-6">
               Singapore Registered & Credible
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Trusted Indonesian Helpers for Singapore Families
+              IRK — Intelligent Matches. Meaningful Homes.
             </h1>
             <p className="text-lg text-brand-beige mb-8 max-w-lg leading-relaxed">
-              We connect compassionate helpers with families who deserve the very best. Transparent pricing. Real people. Real care.
+              Connecting families with trusted domestic helpers and caregivers.
+              <br className="hidden md:block" />
+              Smart, reliable, and caring service — because every home deserves the right match.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services">
@@ -54,11 +56,39 @@ export const Home: React.FC = () => {
           {/* Hero Image Card */}
           <div className="hidden md:block relative">
             <div className="absolute -inset-4 bg-brand-gold/30 rounded-lg transform rotate-3"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1528740561666-dc24705f08a7?auto=format&fit=crop&w=800&q=80" 
-              alt="Helper meticulously organizing clothes" 
+            <img
+              src="https://images.unsplash.com/photo-1528740561666-dc24705f08a7?auto=format&fit=crop&w=800&q=80"
+              alt="Helper meticulously organizing clothes"
               className="relative rounded-lg shadow-2xl object-cover w-full h-[500px]"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Corporate / International Focus Section */}
+      <section className="py-16 bg-white border-b border-brand-beige">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#132c46] rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+            {/* Background Pattern/Map Effect */}
+            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
+
+            <div className="relative z-10 md:w-2/3">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">IRK Global — Intelligence Across Borders.</h2>
+              <p className="text-brand-beige text-lg leading-relaxed mb-6">
+                Providing intelligent workforce solutions and manpower services worldwide.
+                <br />
+                Integrity, reliability, and expert matching at every step.
+              </p>
+              <Link to="/contact?type=corporate">
+                <Button variant="secondary">Partner With Us</Button>
+              </Link>
+            </div>
+            <div className="relative z-10 md:w-1/3 flex justify-center">
+              {/* Placeholder for Global/Map Visual */}
+              <div className="w-48 h-48 bg-brand-gold/20 rounded-full flex items-center justify-center border-4 border-brand-gold/30">
+                <span className="text-brand-gold font-bold text-xl uppercase tracking-widest">Global</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -108,26 +138,26 @@ export const Home: React.FC = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-4">Services Tailored to Your Needs</h2>
             <p className="text-brand-gray max-w-2xl mx-auto">Flexible options to match your family's situation, all with our transparent, stress-free promise.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCardShort 
-              title="Fresh Maid" 
-              desc="New Indonesian helper + all setup. Includes full recruitment, training, and SIP." 
+            <ServiceCardShort
+              title="Fresh Maid"
+              desc="New Indonesian helper + all setup. Includes full recruitment, training, and SIP."
               link="/services"
             />
-            <ServiceCardShort 
-              title="Ex-Singapore" 
-              desc="Experienced helpers returning to work. Familiar with Singapore lifestyle." 
+            <ServiceCardShort
+              title="Ex-Singapore"
+              desc="Experienced helpers returning to work. Familiar with Singapore lifestyle."
               link="/services"
             />
-            <ServiceCardShort 
-              title="Transfer Maid" 
-              desc="Helpers already in Singapore seeking a new employer. Faster deployment." 
+            <ServiceCardShort
+              title="Transfer Maid"
+              desc="Helpers already in Singapore seeking a new employer. Faster deployment."
               link="/services"
             />
-            <ServiceCardShort 
-              title="Direct Hire" 
-              desc="Found your own helper? We handle the paperwork, permits, and bureaucracy." 
+            <ServiceCardShort
+              title="Direct Hire"
+              desc="Found your own helper? We handle the paperwork, permits, and bureaucracy."
               link="/services"
             />
           </div>
@@ -144,30 +174,30 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-brand-navy rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-               <h2 className="font-serif text-3xl font-bold mb-6">Why Families Choose Us</h2>
-               <div className="space-y-4">
-                 <div className="flex items-start gap-4">
-                   <div className="bg-brand-gold/20 p-2 rounded-full mt-1"><CheckCircle size={20} className="text-brand-gold" /></div>
-                   <div>
-                     <h4 className="font-bold text-lg">Peace of Mind</h4>
-                     <p className="text-brand-beige text-sm">From matching to ongoing support, we're with you.</p>
-                   </div>
-                 </div>
-                 <div className="flex items-start gap-4">
-                   <div className="bg-brand-gold/20 p-2 rounded-full mt-1"><CheckCircle size={20} className="text-brand-gold" /></div>
-                   <div>
-                     <h4 className="font-bold text-lg">Genuine Passion</h4>
-                     <p className="text-brand-beige text-sm">Our helpers treat this as a calling, not just a job.</p>
-                   </div>
-                 </div>
-               </div>
+              <h2 className="font-serif text-3xl font-bold mb-6">Why Families Choose Us</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="bg-brand-gold/20 p-2 rounded-full mt-1"><CheckCircle size={20} className="text-brand-gold" /></div>
+                  <div>
+                    <h4 className="font-bold text-lg">Peace of Mind</h4>
+                    <p className="text-brand-beige text-sm">From matching to ongoing support, we're with you.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-brand-gold/20 p-2 rounded-full mt-1"><CheckCircle size={20} className="text-brand-gold" /></div>
+                  <div>
+                    <h4 className="font-bold text-lg">Genuine Passion</h4>
+                    <p className="text-brand-beige text-sm">Our helpers treat this as a calling, not just a job.</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="md:w-1/2 bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/10">
               <div className="flex gap-1 mb-4">
-                {[1,2,3,4,5].map(i => <Star key={i} size={16} className="text-brand-gold fill-brand-gold" />)}
+                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="text-brand-gold fill-brand-gold" />)}
               </div>
               <p className="italic text-lg mb-6 leading-relaxed">
-                "Working with Clean RK was a breath of fresh air. They listened to our needs and found us a helper who feels like family. No hidden costs, just honest service."
+                "Working with IRK was a breath of fresh air. They listened to our needs and found us a helper who feels like family. No hidden costs, just honest service."
               </p>
               <div>
                 <p className="font-bold">Sarah Tan</p>
@@ -186,12 +216,12 @@ export const Home: React.FC = () => {
             Let's find your perfect helper. It starts with a simple conversation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-             <Link to="/contact">
-               <Button variant="primary" className="w-full sm:w-auto text-lg px-8">Get Started Today</Button>
-             </Link>
-             <a href="https://wa.me/6512345678" target="_blank" rel="noreferrer">
-               <Button variant="outline" className="w-full sm:w-auto text-lg px-8">WhatsApp Us</Button>
-             </a>
+            <Link to="/contact">
+              <Button variant="primary" className="w-full sm:w-auto text-lg px-8">Get Started Today</Button>
+            </Link>
+            <a href="https://wa.me/6512345678" target="_blank" rel="noreferrer">
+              <Button variant="outline" className="w-full sm:w-auto text-lg px-8">WhatsApp Us</Button>
+            </a>
           </div>
           <p className="mt-6 text-sm text-brand-gray">
             Or call us directly: <span className="font-bold text-brand-navy">+65 1234 5678</span>
