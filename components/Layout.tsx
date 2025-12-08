@@ -29,8 +29,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="flex justify-between h-32 items-center">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
-              <img src="/irk-logo.png" alt="IRK Logo" className="h-28 w-auto" />
-              <span className="text-2xl text-brand-gold tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
+              <img src="/logo-gold.png" alt="IRK Logo" className="h-28 w-auto" />
+              <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
             </Link>
 
             {/* Desktop Nav */}

@@ -176,10 +176,10 @@ export const Home: React.FC = () => {
       {/* Trust/Testimonial Teaser */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-navy rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
+          <div className="bg-brand-navy rounded-2xl p-8 md:p-12 text-white flex flex-col items-center gap-8 text-center">
+            <div className="max-w-2xl">
               <h2 className="font-serif text-3xl font-bold mb-6">Why Families Choose Us</h2>
-              <div className="space-y-4">
+              <div className="space-y-4 text-left inline-block">
                 <div className="flex items-start gap-4">
                   <div className="bg-brand-gold/20 p-2 rounded-full mt-1"><CheckCircle size={20} className="text-brand-gold" /></div>
                   <div>
@@ -194,18 +194,6 @@ export const Home: React.FC = () => {
                     <p className="text-brand-beige text-sm">Our helpers treat this as a calling, not just a job.</p>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="md:w-1/2 bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/10">
-              <div className="flex gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="text-brand-gold fill-brand-gold" />)}
-              </div>
-              <p className="italic text-lg mb-6 leading-relaxed">
-                "Working with IRK was a breath of fresh air. They listened to our needs and found us a helper who feels like family. No hidden costs, just honest service."
-              </p>
-              <div>
-                <p className="font-bold">Sarah Tan</p>
-                <p className="text-sm text-brand-beige">Mother of two, Singapore</p>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, Plane, FileText, UserCheck, RefreshCw } from 'lucide-react';
+import { Check, X, Plane, FileText, UserCheck, RefreshCw, Minus } from 'lucide-react';
 import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const ServiceCard = ({ title, icon: Icon, desc, features, price }: any) => (
     <h3 className="font-serif text-2xl font-bold text-brand-navy mb-2">{title}</h3>
     <p className="text-brand-charcoal text-sm mb-6 flex-grow">{desc}</p>
 
-    <div className="bg-brand-cream/50 p-4 rounded mb-6">
+    <div className="bg-white border-2 border-brand-navy/20 shadow-sm p-4 rounded mb-6">
       <p className="font-bold text-brand-navy mb-2">What's Included:</p>
       <ul className="space-y-2">
         {features.map((f: string, i: number) => (
@@ -52,7 +52,7 @@ export const Services: React.FC = () => {
             title="Fresh Maid"
             icon={UserCheck}
             desc="Perfect for families needing a new helper for the first time. Start fresh with a helper trained specifically for your needs."
-            price="Competitive Market Rate"
+            price="Contact for Quote"
             features={[
               "Full overseas recruitment",
               "Pre-departure medical & training",
@@ -93,7 +93,7 @@ export const Services: React.FC = () => {
             title="Direct Hire"
             icon={FileText}
             desc="You found her, we handle the rest. We manage the bureaucracy while you focus on the relationship."
-            price="Low Processing Fee"
+            price="Contact for Quote"
             features={[
               "Paperwork & documentation",
               "Work permit application",
@@ -106,7 +106,7 @@ export const Services: React.FC = () => {
             title="Work Permit Renewal"
             icon={RefreshCw}
             desc="Guidance for families renewing an existing helper's permit. Expert help at no extra cost."
-            price="FREE Guidance"
+            price="Contact for Quote"
             features={[
               "Renewal guidance steps",
               "Pre-renewal medical check info",
@@ -176,6 +176,6 @@ export const Services: React.FC = () => {
 
 const renderCell = (value: boolean | string) => {
   if (value === true) return <Check className="text-green-600 mx-auto md:mx-0" size={20} />;
-  if (value === false) return <X className="text-red-400 mx-auto md:mx-0" size={20} />;
+  if (value === false) return <Minus className="text-gray-300 mx-auto md:mx-0" size={20} />;
   return <span className="font-medium text-brand-charcoal">{value}</span>;
 };
