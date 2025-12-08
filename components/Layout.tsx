@@ -26,10 +26,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-32 items-center">
+          <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
-              <img src="/logo-gold.png" alt="IRK Logo" className="h-28 w-auto" />
+              <img src="/logo-gold.png" alt="IRK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
               <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
             </Link>
 

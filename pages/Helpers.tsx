@@ -19,7 +19,7 @@ export const Helpers: React.FC = () => {
                     </div>
                     <div className="md:w-1/2">
                         <img
-                            src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=800&q=80"
+                            src="/helper-food.png"
                             alt="Smiling Helper"
                             className="rounded-lg shadow-xl border-4 border-brand-gold/20"
                         />

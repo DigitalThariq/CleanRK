@@ -57,7 +57,7 @@ export const Home: React.FC = () => {
           <div className="hidden md:block relative">
             <div className="absolute -inset-4 bg-brand-gold/30 rounded-lg transform rotate-3"></div>
             <img
-              src="https://images.unsplash.com/photo-1528740561666-dc24705f08a7?auto=format&fit=crop&w=800&q=80"
+              src="/helper-hands.png"
               alt="Helper meticulously organizing clothes"
               className="relative rounded-lg shadow-2xl object-cover w-full h-[500px]"
             />
