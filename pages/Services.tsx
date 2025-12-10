@@ -40,7 +40,7 @@ export const Services: React.FC = () => {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="font-serif text-4xl font-bold text-white mb-4">Services Tailored to Your Needs</h1>
           <p className="text-brand-beige max-w-2xl mx-auto text-lg">
-            Every family's situation is unique. Whether you need a fresh start or a quick transfer, we handle it all with care and clarity.
+            Our expertise lies in Indonesian domestic helpers. Every family's situation is unique—we handle it all with care and clarity, welcoming helpers of all nationalities.
           </p>
         </div>
       </div>
@@ -179,7 +179,7 @@ export const Services: React.FC = () => {
                   { name: "Medical Check", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
                   { name: "Insurance", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
                   { name: "SIP Training", fresh: true, ex: false, trans: false, direct: true, renew: false },
-                  { name: "Post-Placement Support", fresh: true, ex: true, trans: true, direct: true, renew: false },
+                  { name: "Post-Placement Support", fresh: true, ex: true, trans: true, direct: false, renew: false },
                 ].map((row, idx) => (
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-brand-cream/30' : 'bg-white'}>
                     <td className="px-6 py-4 font-bold text-brand-navy">{row.name}</td>

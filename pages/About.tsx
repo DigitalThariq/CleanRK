@@ -18,7 +18,7 @@ export const About: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
-                        At I.RK, we believe the right match changes everything. From domestic helpers and caregivers to corporate talent and international manpower, our mission is to deliver intelligent hiring solutions you can trust.
+                        At I.RK, we believe the right match changes everything. Specializing in Indonesian domestic helpers and caregivers, while welcoming talent of all nationalities, we deliver intelligent hiring solutions you can trust—from household helpers to corporate talent and international manpower.
                     </p>
                 </div>
             </section>

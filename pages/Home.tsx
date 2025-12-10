@@ -38,7 +38,7 @@ export const Home: React.FC = () => {
               I.RK — Intelligent Matches. Meaningful Homes.
             </h1>
             <p className="text-lg text-brand-beige mb-8 max-w-lg leading-relaxed">
-              Connecting families with trusted domestic helpers and caregivers.
+              Specializing in Indonesian domestic helpers, welcoming all nationalities.
               <br className="hidden md:block" />
               Smart, reliable, and caring service — because every home deserves the right match.
             </p>
@@ -140,13 +140,13 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-4">Services Tailored to Your Needs</h2>
-            <p className="text-brand-gray max-w-2xl mx-auto">Flexible options to match your family's situation, all with our transparent, stress-free promise.</p>
+            <p className="text-brand-gray max-w-2xl mx-auto">Specializing in Indonesian helpers with flexible service options. We also welcome helpers of all nationalities.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCardShort
               title="Fresh Maid"
-              desc="New Indonesian helper + all setup. Includes full recruitment, training, and SIP."
+              desc="Our specialty: new Indonesian helpers + complete setup. Includes full recruitment, training, and SIP."
               link="/services"
             />
             <ServiceCardShort

@@ -100,10 +100,10 @@ export const Helpers: React.FC = () => {
                     <p className="font-serif text-xl text-brand-navy mb-6 italic opacity-90">Apakah Anda seorang ART? Kami Ingin Mendengar dari Anda</p>
 
                     <p className="text-lg text-brand-charcoal mb-2">
-                        If you're Indonesian and interested in working in Singapore, we'd love to connect. We offer fair terms, professional training, and no agency fees for helpers.
+                        We welcome helpers of all nationalities who are interested in working in Singapore. Our specialty is Indonesian helpers, and we offer fair terms, professional training, and no agency fees for helpers.
                     </p>
                     <p className="text-lg text-brand-charcoal mb-8 italic opacity-80">
-                        Jika Anda orang Indonesia dan tertarik bekerja di Singapura, kami ingin terhubung. Kami menawarkan persyaratan yang adil, pelatihan profesional, dan tanpa biaya agensi untuk ART.
+                        Kami menerima ART dari semua negara yang tertarik bekerja di Singapura. Spesialisasi kami adalah ART Indonesia, dan kami menawarkan persyaratan yang adil, pelatihan profesional, dan tanpa biaya agensi untuk ART.
                     </p>
 
                     <Link to="/contact?type=helper">

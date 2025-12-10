@@ -7,6 +7,7 @@ const faqData: FAQItem[] = [
     { category: "Service & Pricing", question: "What's the difference between Fresh Maid and Ex-Singapore?", answer: "A Fresh Maid is new to Singapore and undergoes full training + SIP. An Ex-Singapore helper has worked here before, requiring only refresher training." },
     { category: "Service & Pricing", question: "How long does the process take?", answer: "Most placements are completed within 2–8 weeks, depending on the helper’s availability, your preferences, and MOM’s processing time." },
     { category: "About Helpers", question: "Do your helpers speak English?", answer: "Most have basic to conversational English. We always discuss language expectations when matching families." },
+    { category: "About Helpers", question: "Can I request a helper from a nationality other than Indonesian?", answer: "Our core expertise is in Indonesian helpers; however, we are happy to support clients who require helpers from other nationalities." },
     { category: "Contracts", question: "Is there a contract?", answer: "Yes. We prepare a clear employment contract outlining terms, benefits, and responsibilities. It protects everyone." },
     {
         category: "Contracts",
