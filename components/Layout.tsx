@@ -29,7 +29,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
-              <img src="/logo-gold.png" alt="IRK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
+              <img src="/logo-gold.png" alt="I.RK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
               <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
             </Link>
 
@@ -122,7 +122,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-1">
-              <h3 className="font-serif text-xl font-bold mb-4">IRK</h3>
+              <h3 className="font-serif text-xl font-bold mb-4">I.RK</h3>
               <p className="text-brand-beige text-sm leading-relaxed mb-4">
                 Connecting compassionate Indonesian helpers with Singapore families. Built on trust, transparency, and heart.
               </p>
@@ -169,7 +169,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
 
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
-            <p>&copy; {new Date().getFullYear()} IRK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+            <p>&copy; {new Date().getFullYear()} I.RK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
           </div>
         </div>
       </footer>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
 export interface NavItem {
@@ -24,7 +25,7 @@ export interface Testimonial {
 
 export interface FAQItem {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
   category: string;
 }
 

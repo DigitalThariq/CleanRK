@@ -7,9 +7,9 @@ export const About: React.FC = () => {
             {/* Header */}
             <div className="bg-brand-navy py-16 px-4">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About IRK — Intelligence, Integrity, Inspiration</h1>
+                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About I.RK — Intelligence, Integrity, Inspiration</h1>
                     <p className="text-brand-beige text-lg max-w-3xl mx-auto mt-6 leading-relaxed">
-                        Founded by R.K. (Roshan Khan), IRK is built on values that guide every placement, every connection, and every interaction.
+                        Founded by R.K. (Roshan Khan), I.RK is built on values that guide every placement, every connection, and every interaction.
                     </p>
                 </div>
             </div>
@@ -18,7 +18,7 @@ export const About: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
-                        At IRK, we believe the right match changes everything. From domestic helpers and caregivers to corporate talent and international manpower, our mission is to deliver intelligent hiring solutions you can trust.
+                        At I.RK, we believe the right match changes everything. From domestic helpers and caregivers to corporate talent and international manpower, our mission is to deliver intelligent hiring solutions you can trust.
                     </p>
                 </div>
             </section>
@@ -59,7 +59,7 @@ export const About: React.FC = () => {
             {/* Closing */}
             <section className="py-20 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“IRK — Where Integrity Meets Care.”</h2>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“I.RK — Where Integrity Meets Care.”</h2>
                 </div>
             </section>
         </div>

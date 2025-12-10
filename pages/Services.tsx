@@ -3,8 +3,8 @@ import { Check, X, Plane, FileText, UserCheck, RefreshCw, Minus } from 'lucide-r
 import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ title, icon: Icon, desc, features, price }: any) => (
-  <div className="bg-white rounded-lg shadow-sm border border-brand-beige p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+const ServiceCard = ({ id, title, icon: Icon, desc, features, price }: any) => (
+  <div id={id} className="scroll-mt-32 bg-white rounded-lg shadow-sm border border-brand-beige p-8 flex flex-col h-full hover:shadow-md transition-shadow">
     <div className="bg-brand-cream w-14 h-14 rounded-full flex items-center justify-center mb-6">
       <Icon size={28} className="text-brand-navy" />
     </div>
@@ -12,7 +12,7 @@ const ServiceCard = ({ title, icon: Icon, desc, features, price }: any) => (
     <p className="text-brand-charcoal text-sm mb-6 flex-grow">{desc}</p>
 
     <div className="bg-white border-2 border-brand-navy/20 shadow-sm p-4 rounded mb-6">
-      <p className="font-bold text-brand-navy mb-2">What's Included:</p>
+
       <ul className="space-y-2">
         {features.map((f: string, i: number) => (
           <li key={i} className="flex items-start text-sm text-brand-gray">
@@ -45,14 +45,42 @@ export const Services: React.FC = () => {
         </div>
       </div>
 
+      {/* Quick Navigation Buttons */}
+      <div className="bg-white border-b border-brand-beige sticky top-[73px] z-40 shadow-sm overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex gap-4 md:justify-center min-w-max">
+          {[
+            { label: 'Fresh Maid', id: 'fresh-maid' },
+            { label: 'Ex-Singapore', id: 'ex-singapore' },
+            { label: 'Transfer Maid', id: 'transfer-maid' },
+            { label: 'Direct Hire', id: 'direct-hire' },
+            { label: 'Renewal', id: 'renewal' },
+            { label: 'Comparison', id: 'service-comparison' },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                const element = document.getElementById(item.id);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="px-4 py-2 rounded-full bg-brand-cream text-brand-navy font-medium text-sm hover:bg-brand-navy hover:text-white transition-colors whitespace-nowrap border border-brand-beige"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Main Service Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ServiceCard
+            id="fresh-maid"
             title="Fresh Maid"
             icon={UserCheck}
             desc="Perfect for families needing a new helper for the first time. Start fresh with a helper trained specifically for your needs."
-            price="Contact for Quote"
+            price="Affordable Rate"
             features={[
               "Full overseas recruitment",
               "Pre-departure medical & training",
@@ -63,10 +91,11 @@ export const Services: React.FC = () => {
             ]}
           />
           <ServiceCard
+            id="ex-singapore"
             title="Ex-Singapore"
             icon={RefreshCw}
             desc="For helpers with previous Singapore experience returning to work. They understand the lifestyle and need less training."
-            price="Contact for Quote"
+            price="Affordable Rate"
             features={[
               "Verification of past experience",
               "Refresher training",
@@ -77,10 +106,11 @@ export const Services: React.FC = () => {
             ]}
           />
           <ServiceCard
+            id="transfer-maid"
             title="Transfer Maid"
             icon={Plane}
             desc="Find a new helper who is already in Singapore. No waiting for flights, faster deployment."
-            price="Contact for Quote"
+            price="Affordable Rate"
             features={[
               "Matching with available helper",
               "Work permit transfer",
@@ -90,10 +120,11 @@ export const Services: React.FC = () => {
             ]}
           />
           <ServiceCard
+            id="direct-hire"
             title="Direct Hire"
             icon={FileText}
             desc="You found her, we handle the rest. We manage the bureaucracy while you focus on the relationship."
-            price="Contact for Quote"
+            price="Affordable Rate"
             features={[
               "Paperwork & documentation",
               "Work permit application",
@@ -103,10 +134,11 @@ export const Services: React.FC = () => {
             ]}
           />
           <ServiceCard
+            id="renewal"
             title="Work Permit Renewal"
             icon={RefreshCw}
             desc="Guidance for families renewing an existing helper's permit. Expert help at no extra cost."
-            price="Contact for Quote"
+            price="Complimentary Guidance"
             features={[
               "Renewal guidance steps",
               "Pre-renewal medical check info",
@@ -119,7 +151,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* Comparison Table */}
-      <section className="bg-white py-20">
+      <section id="service-comparison" className="scroll-mt-32 bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-bold text-brand-navy mb-4">Service Comparison</h2>
@@ -140,14 +172,14 @@ export const Services: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-brand-beige">
                 {[
-                  { name: "All-in-One Pricing", fresh: true, ex: true, trans: true, direct: true, renew: "Free" },
-                  { name: "Recruitment", fresh: "Full", ex: "Verify", trans: "Match", direct: false, renew: "N/A" },
+                  { name: "All-in-One Pricing", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
+                  { name: "Recruitment", fresh: true, ex: true, trans: true, direct: false, renew: "N/A" },
                   { name: "Airfare & Lodging", fresh: true, ex: true, trans: false, direct: true, renew: false },
-                  { name: "Work Permit", fresh: "Full", ex: "Full", trans: "Transfer", direct: "Submit", renew: "Guidance" },
-                  { name: "Medical Check", fresh: "Pre+Arr", ex: "Pre+Arr", trans: "Arrival", direct: "Required", renew: "Guidance" },
-                  { name: "Insurance", fresh: true, ex: true, trans: true, direct: "Mandatory", renew: "Guidance" },
-                  { name: "SIP Training", fresh: true, ex: false, trans: false, direct: "If new", renew: false },
-                  { name: "Post-Placement Support", fresh: true, ex: true, trans: true, direct: true, renew: true },
+                  { name: "Work Permit", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
+                  { name: "Medical Check", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
+                  { name: "Insurance", fresh: true, ex: true, trans: true, direct: true, renew: "Guidance" },
+                  { name: "SIP Training", fresh: true, ex: false, trans: false, direct: true, renew: false },
+                  { name: "Post-Placement Support", fresh: true, ex: true, trans: true, direct: true, renew: false },
                 ].map((row, idx) => (
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-brand-cream/30' : 'bg-white'}>
                     <td className="px-6 py-4 font-bold text-brand-navy">{row.name}</td>

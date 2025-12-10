@@ -5,10 +5,19 @@ import { FAQItem } from '../types';
 const faqData: FAQItem[] = [
     { category: "Service & Pricing", question: "What does 'all-in-one pricing' actually mean?", answer: "It means no surprises. The price you see includes everything: recruitment, airfare, medical checks, work permit, insurance, training, and our service fees. No hidden costs." },
     { category: "Service & Pricing", question: "What's the difference between Fresh Maid and Ex-Singapore?", answer: "A Fresh Maid is new to Singapore and undergoes full training + SIP. An Ex-Singapore helper has worked here before, requiring only refresher training." },
-    { category: "Service & Pricing", question: "How long does the process take?", answer: "Usually 8-12 weeks for overseas helpers. Transfer maids can sometimes start within 4-6 weeks." },
+    { category: "Service & Pricing", question: "How long does the process take?", answer: "Most placements are completed within 2–8 weeks, depending on the helper’s availability, your preferences, and MOM’s processing time." },
     { category: "About Helpers", question: "Do your helpers speak English?", answer: "Most have basic to conversational English. We always discuss language expectations when matching families." },
     { category: "Contracts", question: "Is there a contract?", answer: "Yes. We prepare a clear employment contract outlining terms, benefits, and responsibilities. It protects everyone." },
-    { category: "Contracts", question: "What if it doesn't work out?", answer: "We prioritize making the first match work through support. However, if there's a genuine mismatch, we discuss transfer options." },
+    {
+        category: "Contracts",
+        question: "What if it doesn't work out?",
+        answer: (
+            <>
+                <strong className="block mb-2 text-brand-navy">Your Peace of Mind, Guaranteed</strong>
+                If things don’t work out in the first 6 months, we offer a replacement helper or a 50% service fee refund, following MOM guidelines. We handle every step — paperwork, transfer, or repatriation — so you can focus on what matters.
+            </>
+        )
+    },
 ];
 
 const AccordionItem = ({ item }: { item: FAQItem }) => {
@@ -16,7 +25,7 @@ const AccordionItem = ({ item }: { item: FAQItem }) => {
 
     return (
         <div className="border-b border-brand-beige last:border-0">
-            <button 
+            <button
                 className="w-full flex justify-between items-center py-6 text-left focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
             >
@@ -26,7 +35,7 @@ const AccordionItem = ({ item }: { item: FAQItem }) => {
                 </span>
             </button>
             <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
-                <p className="text-brand-charcoal leading-relaxed">{item.answer}</p>
+                <div className="text-brand-charcoal leading-relaxed">{item.answer}</div>
             </div>
         </div>
     );
