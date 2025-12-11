@@ -170,6 +170,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
             <p>&copy; {new Date().getFullYear()} I.RK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+            <p className="mt-3 text-xs opacity-60">
+              Website by{' '}
+              <a
+                href="https://wa.me/6588992295"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-gold hover:text-white transition-colors font-medium"
+              >
+                Centrovert
+              </a>
+            </p>
           </div>
         </div>
       </footer>
