@@ -207,12 +207,9 @@ export const Home: React.FC = () => {
           <p className="text-lg text-brand-charcoal mb-8">
             Let's find your perfect helper. It starts with a simple conversation.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/contact">
-              <Button variant="primary" className="w-full sm:w-auto text-lg px-8">Get Started Today</Button>
-            </Link>
+          <div className="flex justify-center">
             <a href="https://wa.me/6512345678" target="_blank" rel="noreferrer">
-              <Button variant="outline" className="w-full sm:w-auto text-lg px-8">WhatsApp Us</Button>
+              <Button variant="outline" className="text-lg px-8">WhatsApp Us</Button>
             </a>
           </div>
           <p className="mt-6 text-sm text-brand-gray">
