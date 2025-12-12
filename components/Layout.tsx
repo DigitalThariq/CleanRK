@@ -157,12 +157,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <Heart className="text-brand-gold" size={20} fill="#D4A574" />
                 Are you a Helper?
               </h4>
-              <p className="text-sm text-brand-beige mb-4">
+              <p className="text-sm font-semibold text-brand-gold mb-1 italic">Apakah Anda seorang Pembantu?</p>
+              <p className="text-sm text-brand-beige mb-2">
                 We are looking for compassionate helpers. No agency fees for helpers.
               </p>
+              <p className="text-sm text-brand-beige mb-4 italic opacity-80">
+                Kami mencari pembantu yang penuh kasih. Tidak ada biaya agen untuk pembantu.
+              </p>
               <Link to="/contact?type=helper">
-                <button className="w-full bg-brand-gold text-brand-navy font-bold py-2 rounded hover:bg-white transition">
-                  Join Our Family
+                <button className="w-full bg-brand-gold text-brand-navy font-bold py-2 rounded hover:bg-white transition flex flex-col items-center justify-center">
+                  <span>Join Our Family</span>
+                  <span className="text-xs font-normal">Bergabunglah dengan Keluarga Kami</span>
                 </button>
               </Link>
             </div>

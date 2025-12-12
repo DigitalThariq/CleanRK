@@ -18,7 +18,10 @@ export const About: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
-                        At I.RK, we believe the right match changes everything. Specializing in Indonesian domestic helpers and caregivers, while welcoming talent of all nationalities, we deliver intelligent hiring solutions you can trust—from household helpers to corporate talent and international manpower.
+                        At I.RK, we believe the right match strengthens every home and organisation. As a trusted maid agency in Singapore specializing in Indonesian domestic helpers and caregivers while welcoming helpers and talent from all nationalities we provide reliable, compliant, and high-quality manpower solutions. From experienced household helpers to corporate staffing and international manpower recruitment, I.RK delivers smart, transparent, and trustworthy hiring services that families and businesses can depend on.
+                    </p>
+                    <p className="text-xl text-brand-charcoal leading-relaxed font-medium mt-6 border-t border-brand-beige pt-6 italic">
+                        Di I.RK, kami percaya kecocokan yang tepat memperkuat setiap rumah dan organisasi. Sebagai agen pembantu terpercaya di Singapura yang mengkhususkan diri pada pembantu rumah tangga dan pengasuh dari Indonesia sambil menyambut pembantu dan bakat dari semua kebangsaan kami menyediakan solusi tenaga kerja yang andal, patuh, dan berkualitas tinggi. Dari pembantu rumah tangga berpengalaman hingga staf perusahaan dan rekrutmen tenaga kerja internasional, I.RK memberikan layanan perekrutan yang cerdas, transparan, dan terpercaya yang dapat diandalkan oleh keluarga dan bisnis.
                     </p>
                 </div>
             </section>
