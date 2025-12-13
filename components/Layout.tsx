@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, Facebook, Instagram, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Phone, MessageCircle, Facebook, Instagram, Heart, Globe, ChevronDown } from 'lucide-react';
 
 const navItems = [
   { label: 'Services', path: '/services' },
@@ -10,24 +10,65 @@ const navItems = [
   { label: 'FAQ', path: '/faq' },
 ];
 
+// Secondary nav items for the sticky bar
+const serviceNavItems = [
+  { label: 'Included Services', id: 'included-services' },
+  { label: 'Comparison', id: 'service-comparison' },
+];
+
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const handleNavClick = (path: string) => {
-    if (path.includes('#')) {
-      const id = path.split('#')[1];
+  // Global hash scroll handler
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const headerOffset = 180; // Adjust based on your sticky header height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
     }
+  }, [location]);
+
+  const handleNavClick = (path: string) => {
+    // If it's a hash link on the same page, we might need to force scroll if useEffect doesn't trigger (e.g. same hash click)
+    if (path.includes('#')) {
+      const targetHash = path.split('#')[1];
+      if (location.pathname === path.split('#')[0] && location.hash === `#${targetHash}`) {
+        // Force scroll if already on the page/hash
+        const element = document.getElementById(targetHash);
+        if (element) {
+          const headerOffset = 180;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }
+    }
     closeMenu();
   };
+
+  const handleServiceNavClick = (id: string) => {
+    navigate(`/services#${id}`);
+  };
+
+  // Check if we should show the secondary nav (hide on /services to avoid duplication)
+  // Actually, the user wants it "same like services", implying they LIKE the one on Services.
+  // If we assume Services.tsx keeps its own (which has language logic), we should hide this one on /services.
+  const showSecondaryNav = location.pathname !== '/services';
 
   return (
     <div className="flex flex-col min-h-screen font-sans">
@@ -36,84 +77,108 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <span className="opacity-90">Singapore-Registered Agency | License: 12C3456</span>
       </div>
 
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
-              <img src="/logo-gold.png" alt="I.RK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
-              <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
-            </Link>
-
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => handleNavClick(item.path)}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition-colors ${isActive && !item.path.includes('#') ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <Link to="/contact">
-                <button className="bg-brand-navy text-white px-5 py-2 rounded hover:bg-[#132c46] transition text-sm font-semibold">
-                  Contact Us
-                </button>
+      {/* Sticky Header Container */}
+      <div className="sticky top-0 z-50 flex flex-col w-full">
+        {/* Main Navigation */}
+        <nav className="bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm relative z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
+              {/* Logo */}
+              <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
+                <img src="/logo-gold.png" alt="I.RK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
+                <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
               </Link>
+
+              {/* Desktop Nav */}
+              <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => handleNavClick(item.path)}
+                    className={({ isActive }) =>
+                      `text-sm font-medium transition-colors ${isActive && !item.path.includes('#') ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+                <Link to="/contact">
+                  <button className="bg-brand-navy text-white px-5 py-2 rounded hover:bg-[#132c46] transition text-sm font-semibold">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden text-brand-navy p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-brand-navy p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
           </div>
-        </div>
 
-        {/* Mobile Nav Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => handleNavClick(item.path)}
-                  className={({ isActive }) =>
-                    `block px-3 py-3 rounded-md text-base font-medium ${isActive && !item.path.includes('#') ? 'text-brand-gold bg-brand-cream' : 'text-brand-charcoal'
-                    }`
-                  }
+          {/* Mobile Nav Dropdown */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg max-h-[80vh] overflow-y-auto">
+              <div className="px-4 pt-2 pb-6 space-y-1">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => handleNavClick(item.path)}
+                    className={({ isActive }) =>
+                      `block px-3 py-3 rounded-md text-base font-medium ${isActive && !item.path.includes('#') ? 'text-brand-gold bg-brand-cream' : 'text-brand-charcoal'
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+                <Link
+                  to="/contact"
+                  onClick={closeMenu}
+                  className="block w-full text-center mt-4 bg-brand-navy text-white px-5 py-3 rounded font-semibold"
                 >
-                  {item.label}
-                </NavLink>
-              ))}
-              <Link
-                to="/contact"
-                onClick={closeMenu}
-                className="block w-full text-center mt-4 bg-brand-navy text-white px-5 py-3 rounded font-semibold"
-              >
-                Contact Us
-              </Link>
-              <Link
-                to="/contact?type=helper"
-                onClick={closeMenu}
-                className="block w-full text-center mt-2 border border-brand-gold text-brand-gold px-5 py-3 rounded font-semibold"
-              >
-                Join as a Helper
-              </Link>
+                  Contact Us
+                </Link>
+                <Link
+                  to="/contact?type=helper"
+                  onClick={closeMenu}
+                  className="block w-full text-center mt-2 border border-brand-gold text-brand-gold px-5 py-3 rounded font-semibold"
+                >
+                  Join as a Helper
+                </Link>
+              </div>
+            </div>
+          )}
+        </nav>
+
+        {/* Secondary Navigation Bar (Hidden on Services page) */}
+        {showSecondaryNav && (
+          <div className="bg-white border-b border-brand-beige shadow-md relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 py-3 relative flex flex-col md:flex-row items-center justify-center">
+
+              {/* Scrollable Nav Buttons - Centered */}
+              <div className="flex gap-4 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide justify-center">
+                {serviceNavItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => handleServiceNavClick(item.id)}
+                    className="px-6 py-2 rounded-full bg-brand-cream text-brand-navy font-medium text-sm hover:bg-brand-navy hover:text-white transition-colors whitespace-nowrap border border-brand-beige shadow-sm"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
-      </nav>
+      </div>
 
       {/* Main Content */}
       <main className="flex-grow">
