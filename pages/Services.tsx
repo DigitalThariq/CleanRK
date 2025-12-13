@@ -101,6 +101,7 @@ const translations = {
       transfer: 'Transfer Maid',
       direct: 'Direct Hire',
       renewal: 'Renewal',
+      included: 'Included Services',
       comparison: 'Comparison'
     }
   },
@@ -197,6 +198,7 @@ const translations = {
       transfer: '转让女佣',
       direct: '直接聘用',
       renewal: '更新',
+      included: '包含服务',
       comparison: '比较'
     }
   },
@@ -293,6 +295,7 @@ const translations = {
       transfer: 'Pindahan',
       direct: 'Terus',
       renewal: 'Pembaharuan',
+      included: 'Perkhidmatan Termasuk',
       comparison: 'Perbandingan'
     }
   },
@@ -389,6 +392,7 @@ const translations = {
       transfer: 'இடமாற்றம்',
       direct: 'நேரடி',
       renewal: 'புதுப்பித்தல்',
+      included: 'உள்ளடங்கிய சேவைகள்',
       comparison: 'ஒப்பீடு'
     }
   }
@@ -490,7 +494,7 @@ const IncludedServicesPanel: React.FC<{ t: typeof translations['en'] }> = ({ t }
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-brand-beige lg:sticky lg:top-[88px] overflow-hidden">
+    <div id="included-services" className="bg-white rounded-lg shadow-sm border border-brand-beige lg:sticky lg:top-[88px] overflow-hidden">
       <div className="p-6 border-b border-brand-beige">
         <h3 className="font-serif text-2xl font-bold text-brand-navy mb-2">{t.included.title}</h3>
         <span className="inline-block bg-brand-gold/20 text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">
@@ -551,6 +555,7 @@ export const Services: React.FC = () => {
               { label: t.nav.transfer, id: 'transfer-maid' },
               { label: t.nav.direct, id: 'direct-hire' },
               { label: t.nav.renewal, id: 'renewal' },
+              { label: t.nav.included, id: 'included-services' },
               { label: t.nav.comparison, id: 'service-comparison' },
             ].map((item) => (
               <button
