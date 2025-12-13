@@ -4,8 +4,6 @@ import { Menu, X, Phone, MessageCircle, Facebook, Instagram, Heart } from 'lucid
 
 const navItems = [
   { label: 'Services', path: '/services' },
-  { label: 'Included Services', path: '/services#included-services' },
-  { label: 'Comparison', path: '/services#service-comparison' },
   { label: 'Our Helpers', path: '/helpers' },
   { label: 'How It Works', path: '/how-it-works' },
   { label: 'About Us', path: '/about' },
@@ -49,14 +47,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+            <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
                   onClick={() => handleNavClick(item.path)}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors whitespace-nowrap ${isActive && !item.path.includes('#') ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
+                    `text-sm font-medium transition-colors ${isActive && !item.path.includes('#') ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
                     }`
                   }
                 >
@@ -72,7 +70,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-brand-navy p-2"
+              className="md:hidden text-brand-navy p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -83,7 +81,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
         {/* Mobile Nav Dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+          <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navItems.map((item) => (
                 <NavLink
