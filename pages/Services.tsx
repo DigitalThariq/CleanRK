@@ -658,7 +658,7 @@ export const Services: React.FC = () => {
               <thead className="bg-brand-navy text-white text-xs uppercase font-bold tracking-wider">
                 <tr>
                   {t.comparison.headers.map((header, i) => (
-                    <th key={i} className="px-6 py-4 whitespace-nowrap">{header}</th>
+                    <th key={i} className={`px-6 py-4 whitespace-nowrap ${i === 0 ? 'sticky left-0 z-20 bg-brand-navy' : ''}`}>{header}</th>
                   ))}
                 </tr>
               </thead>
@@ -674,7 +674,7 @@ export const Services: React.FC = () => {
                   { name: t.comparison.rows[7], fresh: true, ex: true, trans: true, direct: false, renew: false },
                 ].map((row, idx) => (
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-brand-cream/30' : 'bg-white'}>
-                    <td className="px-6 py-4 font-bold text-brand-navy">{row.name}</td>
+                    <td className={`px-6 py-4 font-bold text-brand-navy sticky left-0 z-10 ${idx % 2 === 0 ? 'bg-brand-cream' : 'bg-white'} border-r border-brand-beige/50`}>{row.name}</td>
                     <td className="px-6 py-4">{renderCell(row.fresh)}</td>
                     <td className="px-6 py-4">{renderCell(row.ex)}</td>
                     <td className="px-6 py-4">{renderCell(row.trans)}</td>
