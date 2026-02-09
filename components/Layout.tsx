@@ -85,7 +85,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center py-2">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-1 justify-self-start" onClick={closeMenu}>
-                <img src="/adel-logo-full.png" alt="ADEL Maid & Employment Services" className="h-28 md:h-48 w-auto transition-all duration-300" />
+                <img src="/adel-logo-full.png" alt="ADEL Maid & Employment Services" className="h-32 md:h-48 w-auto max-w-[70vw] object-contain transition-all duration-300" />
               </Link>
 
               {/* Desktop Nav */}
