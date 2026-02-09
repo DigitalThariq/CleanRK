@@ -82,10 +82,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {/* Main Navigation */}
         <nav className="bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm relative z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center py-2">
+            <div className="flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center py-4 md:py-2">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-1 justify-self-start flex-shrink-0" onClick={closeMenu}>
-                <img src="/adel-logo-full.png?v=2" alt="ADEL Maid & Employment Services" className="h-36 md:h-48 w-auto max-w-[75vw] object-contain transition-all duration-300" />
+                <img src="/adel-logo-full.png?v=3" alt="ADEL Maid & Employment Services" className="w-64 max-w-[70vw] h-auto md:h-48 md:w-auto object-contain transition-all duration-300" />
               </Link>
 
               {/* Desktop Nav */}
@@ -119,7 +119,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
             </div>
           </div>

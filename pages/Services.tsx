@@ -544,7 +544,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* Quick Navigation Buttons & Language Switcher */}
-      <div className="bg-white border-b border-brand-beige fixed top-[180px] md:top-[170px] left-0 right-0 z-50 shadow-md">
+      <div className="bg-white border-b border-brand-beige fixed top-[200px] md:top-[170px] left-0 right-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-4">
 
           {/* Scrollable Nav Buttons */}
