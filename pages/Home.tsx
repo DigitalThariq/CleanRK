@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Heart, Shield, ArrowRight, Star } from 'lucide-react';
 import { Button } from '../components/Button';
+import { Testimonials } from '../components/Testimonials';
 
 const ServiceCardShort = ({ title, desc, link }: { title: string, desc: string, link: string }) => (
   <Link to={link} className="block group">
@@ -35,7 +36,7 @@ export const Home: React.FC = () => {
               Singapore Registered & Credible
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              I.RK — Intelligent Matches. Meaningful Homes.
+              ADEL — Intelligent Matches. Meaningful Homes.
             </h1>
             <p className="text-lg text-brand-beige mb-8 max-w-lg leading-relaxed">
               Specializing in Indonesian domestic helpers, welcoming all nationalities.
@@ -73,7 +74,7 @@ export const Home: React.FC = () => {
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
 
             <div className="relative z-10 md:w-2/3 flex flex-col items-center md:items-start text-center md:text-left">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">I.RK Global — Intelligence Across Borders.</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">ADEL Global — Intelligence Across Borders.</h2>
               <p className="text-brand-beige text-lg leading-relaxed mb-6">
                 Providing intelligent workforce solutions and manpower services worldwide.
                 <br />
@@ -88,7 +89,7 @@ export const Home: React.FC = () => {
               <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
                 <img
                   src="/global-globe-3d.png"
-                  alt="I.RK Global Reach"
+                  alt="ADEL Global Reach"
                   className="w-full h-full object-contain filter drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -199,6 +200,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-20 bg-brand-cream border-t border-brand-beige">

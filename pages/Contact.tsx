@@ -53,7 +53,7 @@ export const Contact: React.FC = () => {
                                 <div className="bg-white p-3 rounded-full shadow-sm text-brand-gold"><Mail size={24} /></div>
                                 <div>
                                     <h4 className="font-bold text-brand-navy">Email</h4>
-                                    <p className="text-brand-charcoal">hello@cleanrk.com.sg</p>
+                                    <p className="text-brand-charcoal">hello@adel.com.sg</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">

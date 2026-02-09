@@ -7,9 +7,9 @@ export const About: React.FC = () => {
             {/* Header */}
             <div className="bg-brand-navy py-16 px-4">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About I.RK — Intelligence, Integrity, Inspiration</h1>
+                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About ADEL — Intelligence, Integrity, Inspiration</h1>
                     <p className="text-brand-beige text-lg max-w-3xl mx-auto mt-6 leading-relaxed">
-                        Founded by R.K. (Roshan Khan), I.RK is built on values that guide every placement, every connection, and every interaction.
+                        Founded by R.K. (Roshan Khan), ADEL is built on values that guide every placement, every connection, and every interaction.
                     </p>
                 </div>
             </div>
@@ -18,10 +18,10 @@ export const About: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
-                        At I.RK, we believe the right match strengthens every home and organisation. As a trusted maid agency in Singapore specializing in Indonesian domestic helpers and caregivers while welcoming helpers and talent from all nationalities we provide reliable, compliant, and high-quality manpower solutions. From experienced household helpers to corporate staffing and international manpower recruitment, I.RK delivers smart, transparent, and trustworthy hiring services that families and businesses can depend on.
+                        At ADEL, we believe the right match strengthens every home and organisation. As a trusted maid agency in Singapore specializing in Indonesian domestic helpers and caregivers while welcoming helpers and talent from all nationalities we provide reliable, compliant, and high-quality manpower solutions. From experienced household helpers to corporate staffing and international manpower recruitment, ADEL delivers smart, transparent, and trustworthy hiring services that families and businesses can depend on.
                     </p>
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium mt-6 border-t border-brand-beige pt-6 italic">
-                        Di I.RK, kami percaya kecocokan yang tepat memperkuat setiap rumah dan organisasi. Sebagai agen pembantu terpercaya di Singapura yang mengkhususkan diri pada pembantu rumah tangga dan pengasuh dari Indonesia sambil menyambut pembantu dan bakat dari semua kebangsaan kami menyediakan solusi tenaga kerja yang andal, patuh, dan berkualitas tinggi. Dari pembantu rumah tangga berpengalaman hingga staf perusahaan dan rekrutmen tenaga kerja internasional, I.RK memberikan layanan perekrutan yang cerdas, transparan, dan terpercaya yang dapat diandalkan oleh keluarga dan bisnis.
+                        Di ADEL, kami percaya kecocokan yang tepat memperkuat setiap rumah dan organisasi. Sebagai agen pembantu terpercaya di Singapura yang mengkhususkan diri pada pembantu rumah tangga dan pengasuh dari Indonesia sambil menyambut pembantu dan bakat dari semua kebangsaan kami menyediakan solusi tenaga kerja yang andal, patuh, dan berkualitas tinggi. Dari pembantu rumah tangga berpengalaman hingga staf perusahaan dan rekrutmen tenaga kerja internasional, ADEL memberikan layanan perekrutan yang cerdas, transparan, dan terpercaya yang dapat diandalkan oleh keluarga dan bisnis.
                     </p>
                 </div>
             </section>
@@ -62,7 +62,7 @@ export const About: React.FC = () => {
             {/* Closing */}
             <section className="py-20 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“I.RK — Where Integrity Meets Care.”</h2>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“ADEL — Where Integrity Meets Care.”</h2>
                 </div>
             </section>
         </div>

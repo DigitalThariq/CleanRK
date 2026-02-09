@@ -82,15 +82,14 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {/* Main Navigation */}
         <nav className="bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm relative z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
+            <div className="flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center py-2">
               {/* Logo */}
-              <Link to="/" className="flex items-center gap-4" onClick={closeMenu}>
-                <img src="/logo-gold.png" alt="I.RK Logo" className="h-28 md:h-40 w-auto transition-all duration-300" />
-                <span className="text-2xl text-black tracking-widest uppercase font-bold pt-2">MAID SERVICE</span>
+              <Link to="/" className="flex items-center gap-1 justify-self-start" onClick={closeMenu}>
+                <img src="/adel-logo-full.png" alt="ADEL Maid & Employment Services" className="h-20 md:h-48 w-auto transition-all duration-300" />
               </Link>
 
               {/* Desktop Nav */}
-              <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
+              <div className="hidden md:flex items-center space-x-6 xl:space-x-8 justify-self-center">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.path}
@@ -111,9 +110,12 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 </Link>
               </div>
 
+              {/* Grid Spacer for Desktop Centering Balance */}
+              <div className="hidden md:block"></div>
+
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden text-brand-navy p-2"
+                className="md:hidden text-brand-navy p-2 self-center"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -201,7 +203,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="col-span-1 md:col-span-1">
-              <h3 className="font-serif text-xl font-bold mb-4">I.RK</h3>
+              <h3 className="font-serif text-xl font-bold mb-4">ADEL</h3>
               <p className="text-brand-beige text-sm leading-relaxed mb-4">
                 Connecting compassionate Indonesian helpers with Singapore families. Built on trust, transparency, and heart.
               </p>
@@ -253,7 +255,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
 
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
-            <p>&copy; {new Date().getFullYear()} I.RK Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+            <p>&copy; 2024 ADEL Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
             <p className="mt-3 text-xs opacity-60">
               Website by{' '}
               <a

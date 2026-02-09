@@ -494,7 +494,7 @@ const IncludedServicesPanel: React.FC<{ t: typeof translations['en'] }> = ({ t }
   ];
 
   return (
-    <div id="included-services" className="bg-white rounded-lg shadow-sm border border-brand-beige lg:sticky lg:top-[88px] overflow-hidden">
+    <div id="included-services" className="bg-white rounded-lg shadow-sm border border-brand-beige lg:sticky lg:top-[230px] overflow-hidden">
       <div className="p-6 border-b border-brand-beige">
         <h3 className="font-serif text-2xl font-bold text-brand-navy mb-2">{t.included.title}</h3>
         <span className="inline-block bg-brand-gold/20 text-brand-navy text-xs font-semibold px-3 py-1 rounded-full">
@@ -544,7 +544,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* Quick Navigation Buttons & Language Switcher */}
-      <div className="bg-white border-b border-brand-beige fixed top-[136px] md:top-[170px] left-0 right-0 z-50 shadow-md">
+      <div className="bg-white border-b border-brand-beige fixed top-[110px] md:top-[170px] left-0 right-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-4">
 
           {/* Scrollable Nav Buttons */}
