@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Heart, FileText, Lightbulb, Users } from 'lucide-react';
+import { ShieldCheck, Heart, Users } from 'lucide-react';
 
 export const About: React.FC = () => {
     return (
@@ -7,53 +7,128 @@ export const About: React.FC = () => {
             {/* Header */}
             <div className="bg-brand-navy py-16 px-4">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About ADEL — Intelligence, Integrity, Inspiration</h1>
+                    <h1 className="font-serif text-4xl font-bold text-white mb-4">About ADEL — Trusted Connections, Meaningful Placements</h1>
                     <p className="text-brand-beige text-lg max-w-3xl mx-auto mt-6 leading-relaxed">
-                        Founded by R.K. (Roshan Khan), ADEL is built on values that guide every placement, every connection, and every interaction.
+                        ADEL Employment Agency is dedicated to helping families rediscover balance and peace of mind through reliable domestic helper and caregiving solutions in Singapore.
                     </p>
                 </div>
             </div>
 
-            {/* Narrative */}
+            {/* Introduction */}
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
-                        At ADEL, we believe the right match strengthens every home and organisation. As a trusted maid agency in Singapore specializing in Indonesian domestic helpers and caregivers while welcoming helpers and talent from all nationalities we provide reliable, compliant, and high-quality manpower solutions. From experienced household helpers to corporate staffing and international manpower recruitment, ADEL delivers smart, transparent, and trustworthy hiring services that families and businesses can depend on.
-                    </p>
-                    <p className="text-xl text-brand-charcoal leading-relaxed font-medium mt-6 border-t border-brand-beige pt-6 italic">
-                        Di ADEL, kami percaya kecocokan yang tepat memperkuat setiap rumah dan organisasi. Sebagai agen pembantu terpercaya di Singapura yang mengkhususkan diri pada pembantu rumah tangga dan pengasuh dari Indonesia sambil menyambut pembantu dan bakat dari semua kebangsaan kami menyediakan solusi tenaga kerja yang andal, patuh, dan berkualitas tinggi. Dari pembantu rumah tangga berpengalaman hingga staf perusahaan dan rekrutmen tenaga kerja internasional, ADEL memberikan layanan perekrutan yang cerdas, transparan, dan terpercaya yang dapat diandalkan oleh keluarga dan bisnis.
+                        Built on strong values and a people-first approach, ADEL focuses on understanding each family’s unique needs and providing carefully matched domestic workers who support daily household responsibilities with professionalism and care.
                     </p>
                 </div>
             </section>
 
-            {/* Core Values */}
+            {/* Core Values & Services */}
             <section className="py-16 bg-brand-cream">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="font-serif text-3xl font-bold text-brand-navy mb-4">Our Core Values</h2>
+                <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="bg-white p-3 rounded-full shadow-sm">
+                                <ShieldCheck className="text-brand-navy" size={24} />
+                            </div>
+                            <h2 className="font-serif text-2xl font-bold text-brand-navy">Experience, Transparency, and Genuine Service</h2>
+                        </div>
+                        <p className="text-brand-charcoal leading-relaxed">
+                            At ADEL, every placement is guided by experience, transparency, and genuine service. From childcare and elderly care to housekeeping and household support, the agency ensures that each domestic worker is carefully selected and prepared to meet specific job requirements.
+                        </p>
+                        <p className="text-brand-charcoal leading-relaxed italic border-l-4 border-brand-gold pl-4">
+                            The goal is simple — to make family life easier, reduce daily stress, and allow clients to focus on what truly matters.
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-lg shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                            <div className="bg-brand-cream p-4 rounded-full mb-6">
-                                <Lightbulb className="text-brand-navy" size={32} />
+                    <div className="bg-white p-8 rounded-lg shadow-sm">
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="bg-brand-cream p-3 rounded-full">
+                                <Heart className="text-brand-navy" size={24} />
                             </div>
-                            <h3 className="font-serif text-2xl font-bold text-brand-navy mb-3">Intelligence</h3>
-                            <p className="text-brand-charcoal leading-relaxed">Smart solutions, thoughtful matching, and expert guidance.</p>
+                            <h3 className="font-serif text-2xl font-bold text-brand-navy">Meaningful Relationships</h3>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                            <div className="bg-brand-cream p-4 rounded-full mb-6">
-                                <ShieldCheck className="text-brand-navy" size={32} />
+                        <p className="text-brand-charcoal leading-relaxed mb-4">
+                            Beyond placement services, ADEL believes in creating meaningful relationships between employers and helpers. Through guidance, counselling support, and continuous follow-ups, the agency promotes a positive and respectful environment that benefits both families and domestic workers.
+                        </p>
+                        <div className="flex items-center gap-4">
+                            <div className="bg-brand-cream p-3 rounded-full">
+                                <Users className="text-brand-navy" size={24} />
                             </div>
-                            <h3 className="font-serif text-2xl font-bold text-brand-navy mb-3">Integrity</h3>
-                            <p className="text-brand-charcoal leading-relaxed">Every placement handled with honesty, transparency, and respect.</p>
+                            <p className="text-brand-charcoal font-medium">
+                                This commitment to service quality and trust has made ADEL a reliable partner for households seeking dependable manpower solutions.
+                            </p>
                         </div>
-                        <div className="bg-white p-8 rounded-lg shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                            <div className="bg-brand-cream p-4 rounded-full mb-6">
-                                <Users className="text-brand-navy" size={32} />
+                    </div>
+                </div>
+            </section>
+
+            {/* Gallery Section */}
+            <section className="py-16 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="font-serif text-3xl font-bold text-brand-navy mb-4">Our Community & Training</h2>
+                        <p className="text-brand-charcoal max-w-2xl mx-auto">
+                            Glimpses of our rigorous training sessions, community building, and the dedicated individuals who make ADEL special.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* Large featured item */}
+                        <div className="md:col-span-2 lg:col-span-2 row-span-2 relative group overflow-hidden rounded-xl shadow-md h-96">
+                            <img
+                                src="/gallery-group-outdoor.png"
+                                alt="ADEL Community Group Photo"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <p className="text-white font-medium">Building a supportive community</p>
                             </div>
-                            <h3 className="font-serif text-2xl font-bold text-brand-navy mb-3">Inspiration</h3>
-                            <p className="text-brand-charcoal leading-relaxed">Empowering families and workers, creating meaningful opportunities.</p>
+                        </div>
+
+                        {/* Standard items */}
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64 md:h-96">
+                            <img
+                                src="/gallery-training-baby.png"
+                                alt="Infant Care Training"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <p className="text-white font-medium"> specialized Infant Care Training</p>
+                            </div>
+                        </div>
+
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+                            <img
+                                src="/gallery-training-patient.png"
+                                alt="Patient Care Training"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <p className="text-white font-medium">Professional Elderly & Patient Care</p>
+                            </div>
+                        </div>
+
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+                            <img
+                                src="/gallery-cleaning.png"
+                                alt="Housekeeping Training"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <p className="text-white font-medium">Meticulous Housekeeping Standards</p>
+                            </div>
+                        </div>
+
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+                            <img
+                                src="/gallery-classroom.png"
+                                alt="Classroom Training"
+                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <p className="text-white font-medium">Comprehensive Classroom Education</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +137,10 @@ export const About: React.FC = () => {
             {/* Closing */}
             <section className="py-20 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“ADEL — Where Integrity Meets Care.”</h2>
+                    <p className="text-xl text-brand-charcoal leading-relaxed font-medium mb-6">
+                        ADEL is more than an employment agency — it is a community built to support homes, strengthen relationships, and bring confidence to every hiring journey.
+                    </p>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-navy italic">“ADEL — Trusted Connections, Meaningful Placements.”</h2>
                 </div>
             </section>
         </div>
