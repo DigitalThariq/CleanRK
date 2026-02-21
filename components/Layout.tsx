@@ -73,54 +73,91 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <div className="flex flex-col min-h-screen font-sans">
       {/* Top Bar */}
-      <div className="bg-brand-navy text-white py-2 px-4 text-sm text-center md:text-right md:px-8">
-        <span className="opacity-90">Singapore-Registered Agency | License No: 23C1784 | UEN: 53470053E</span>
+      <div className="bg-brand-navy text-white py-1.5 px-3 sm:px-4 text-[10px] sm:text-xs text-center md:text-right md:px-8 tracking-wide font-medium">
+        <span className="opacity-95">Singapore-Registered Agency | License No: 23C1784 | UEN: 53470053E</span>
       </div>
 
       {/* Sticky Header Container */}
       <div className="sticky top-0 z-50 flex flex-col w-full">
         {/* Main Navigation */}
         <nav className="bg-white/95 backdrop-blur-sm border-b border-brand-beige shadow-sm relative z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between md:grid md:grid-cols-[1fr_auto_1fr] items-center py-2">
-              {/* Logo */}
-              <Link to="/" className="flex items-center gap-1 justify-self-start flex-shrink-0" onClick={closeMenu}>
-                <img src="/adel-logo-full.png?v=8" alt="ADEL Maid & Employment Services" className="h-20 sm:h-24 md:h-28 lg:h-36 w-auto object-contain transition-all duration-300" />
-              </Link>
+          <div className="max-w-7xl mx-auto px-4 lg:px-6">
+            <div className="flex justify-between items-center py-2.5 md:py-3 layout-container gap-2">
 
-              {/* Desktop Nav */}
-              <div className="hidden md:flex items-center space-x-6 xl:space-x-8 justify-self-center">
-                {navItems.map((item) => (
-                  <NavLink
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => handleNavClick(item.path)}
-                    className={({ isActive }) =>
-                      `text-sm font-medium transition-colors ${isActive && !item.path.includes('#') ? 'text-brand-gold font-semibold' : 'text-brand-charcoal hover:text-brand-navy'
-                      }`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ))}
-                <Link to="/contact">
-                  <button className="bg-brand-navy text-white px-5 py-2 rounded hover:bg-[#132c46] transition text-sm font-semibold">
-                    Contact Us
-                  </button>
+              {/* Logo Area & Quick Mobile Actions */}
+              <div className="flex items-center gap-2.5 sm:gap-4 flex-shrink-0">
+                <Link to="/" className="flex items-center" onClick={closeMenu}>
+                  <img
+                    src="/adel-logo-full.png?v=8"
+                    alt="ADEL Maid & Employment Services"
+                    className="h-[115px] sm:h-[130px] md:h-[150px] lg:h-[155px] w-auto object-contain transition-all duration-300"
+                  />
                 </Link>
+
+                {/* Mobile Extra: Badge + Direct Action */}
+                <div className="flex xl:hidden items-center border-l-2 border-brand-gold/30 pl-2.5 sm:pl-3">
+                  <div className="flex flex-col items-start gap-[2px]">
+                    <span className="bg-brand-cream/80 text-brand-gold px-1.5 py-[2px] rounded-sm text-[8px] sm:text-[9px] uppercase font-bold tracking-widest shadow-sm border border-brand-gold/20">
+                      Trusted Agency
+                    </span>
+                    <a
+                      href="https://wa.me/6589123455"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-green-600 font-bold text-xs sm:text-[13px] hover:text-green-700 transition-colors mt-0.5"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <MessageCircle size={14} strokeWidth={2.5} /> <span className="tracking-tight">WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
-              {/* Grid Spacer for Desktop Centering Balance */}
-              <div className="hidden md:block"></div>
+              {/* Desktop Nav */}
+              <div className="hidden xl:flex items-center justify-end flex-grow ml-8">
+                <div className="flex items-center space-x-7 mr-8">
+                  {navItems.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => handleNavClick(item.path)}
+                      className={({ isActive }) =>
+                        `text-[15px] font-semibold transition-colors ${isActive && !item.path.includes('#') ? 'text-brand-gold' : 'text-brand-navy/90 hover:text-brand-gold'
+                        }`
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  ))}
+                </div>
 
-              {/* Mobile Menu Button */}
-              <button
-                className="md:hidden text-brand-navy p-2 self-center"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
+                <div className="flex items-center gap-3 border-l-2 border-brand-gold/20 pl-8">
+                  <a
+                    href="https://wa.me/6589123455"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 border-2 border-green-500 text-green-600 px-5 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors text-sm font-bold shadow-sm"
+                  >
+                    <MessageCircle size={18} strokeWidth={2.5} /> WhatsApp
+                  </a>
+                  <Link to="/contact">
+                    <button className="bg-brand-navy text-brand-cream px-6 py-2.5 rounded-md hover:bg-[#132c46] hover:text-white transition-all text-sm font-bold shadow-md tracking-wide">
+                      Contact Us
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Mobile Menu Button Center Alignment Wrapper */}
+              <div className="flex items-center xl:hidden justify-end">
+                <button
+                  className="text-brand-navy p-1 focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-md"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  aria-label="Toggle menu"
+                >
+                  {isMenuOpen ? <X size={32} /> : <Menu size={32} strokeWidth={2.5} />}
+                </button>
+              </div>
             </div>
           </div>
 
