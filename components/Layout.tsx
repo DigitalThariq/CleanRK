@@ -228,7 +228,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-2 text-sm text-brand-beige">
                 <li className="flex items-center gap-2"><Phone size={16} /> +65 8912 3455</li>
                 <li className="flex items-center gap-2"><MessageCircle size={16} /> WhatsApp Us</li>
-                <li>123 Orchard Road, #05-01<br />Singapore 238888</li>
+                <li>30 Lor Tanggam<br />Singapore 798730</li>
                 <li className="text-xs mt-2 opacity-75">Mon-Sat: 10am - 7pm</li>
               </ul>
             </div>
