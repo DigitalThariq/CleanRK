@@ -74,7 +74,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     <div className="flex flex-col min-h-screen font-sans">
       {/* Top Bar */}
       <div className="bg-brand-navy text-white py-2 px-4 text-sm text-center md:text-right md:px-8">
-        <span className="opacity-90">Singapore-Registered Agency | License: 12C3456</span>
+        <span className="opacity-90">Singapore-Registered Agency | License No: 23C1784 | UEN: 53470053E</span>
       </div>
 
       {/* Sticky Header Container */}
@@ -189,7 +189,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/6512345678"
+        href="https://wa.me/6589123455"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-105 z-40 flex items-center gap-2"
@@ -226,7 +226,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div>
               <h4 className="font-bold text-lg mb-4 text-brand-gold">Contact</h4>
               <ul className="space-y-2 text-sm text-brand-beige">
-                <li className="flex items-center gap-2"><Phone size={16} /> +65 1234 5678</li>
+                <li className="flex items-center gap-2"><Phone size={16} /> +65 8912 3455</li>
                 <li className="flex items-center gap-2"><MessageCircle size={16} /> WhatsApp Us</li>
                 <li>123 Orchard Road, #05-01<br />Singapore 238888</li>
                 <li className="text-xs mt-2 opacity-75">Mon-Sat: 10am - 7pm</li>
@@ -255,7 +255,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
 
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
-            <p>&copy; 2024 ADEL Pte Ltd. All rights reserved. | Licence No: 12C3456</p>
+            <p>&copy; 2024 ADEL Pte Ltd. All rights reserved. | Licence No: 23C1784 | UEN: 53470053E</p>
             <p className="mt-3 text-xs opacity-60">
               Website by{' '}
               <a

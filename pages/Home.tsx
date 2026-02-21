@@ -212,12 +212,12 @@ export const Home: React.FC = () => {
             Let's find your perfect helper. It starts with a simple conversation.
           </p>
           <div className="flex justify-center">
-            <a href="https://wa.me/6512345678" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/6589123455" target="_blank" rel="noreferrer">
               <Button variant="outline" className="text-lg px-8">WhatsApp Us</Button>
             </a>
           </div>
           <p className="mt-6 text-sm text-brand-gray">
-            Or call us directly: <span className="font-bold text-brand-navy">+65 1234 5678</span>
+            Or call us directly: <span className="font-bold text-brand-navy">+65 8912 3455</span>
           </p>
         </div>
       </section>

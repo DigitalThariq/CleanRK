@@ -36,17 +36,16 @@ export const Contact: React.FC = () => {
                             <div className="flex items-start gap-4">
                                 <div className="bg-white p-3 rounded-full shadow-sm text-brand-gold"><Phone size={24} /></div>
                                 <div>
-                                    <h4 className="font-bold text-brand-navy">Call Us</h4>
-                                    <p className="text-brand-charcoal">+65 1234 5678</p>
+                                    <p className="font-semibold text-brand-navy">Phone</p>
+                                    <p className="text-brand-charcoal">+65 8912 3455</p>
                                     <p className="text-xs text-brand-gray">Mon-Sat: 10am - 7pm</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="bg-white p-3 rounded-full shadow-sm text-brand-gold"><MessageCircle size={24} /></div>
                                 <div>
-                                    <h4 className="font-bold text-brand-navy">WhatsApp</h4>
-                                    <p className="text-brand-charcoal">Fastest way to connect</p>
-                                    <a href="https://wa.me/6512345678" className="text-brand-navy underline text-sm hover:text-brand-gold">Chat now</a>
+                                    <p className="font-semibold text-brand-navy">WhatsApp</p>
+                                    <a href="https://wa.me/6589123455" className="text-brand-navy underline text-sm hover:text-brand-gold">Chat now</a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
