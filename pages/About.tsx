@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Heart, Users } from 'lucide-react';
+import { ShieldCheck, Heart, Users, Check } from 'lucide-react';
 
 export const About: React.FC = () => {
     return (
@@ -20,6 +20,152 @@ export const About: React.FC = () => {
                     <p className="text-xl text-brand-charcoal leading-relaxed font-medium">
                         Built on strong values and a people-first approach, ADEL focuses on understanding each family’s unique needs and providing carefully matched domestic workers who support daily household responsibilities with professionalism and care.
                     </p>
+                </div>
+            </section>
+
+            {/* Founder Profile Section */}
+            <section className="py-20 bg-white border-t border-brand-cream">
+                <div className="max-w-7xl mx-auto px-4">
+                    {/* First Founder */}
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
+                        {/* Founder Photo - Left */}
+                        <div className="w-full lg:w-5/12 max-w-sm lg:max-w-none mx-auto">
+                            <div className="relative mt-8 lg:mt-0">
+                                {/* Blue frame behind image to match reference */}
+                                <div className="absolute inset-0 border-[3px] border-[#1e78b7] rounded-xl transform translate-x-4 translate-y-4 bg-gradient-to-br from-transparent to-blue-50/50"></div>
+                                <img
+                                    src="/founder-1.png"
+                                    alt="Nilfer Begum"
+                                    className="relative z-10 w-full aspect-[4/5] object-cover object-top rounded-xl shadow-lg border-4 border-white"
+                                />
+
+                                {/* Floating Card 1: Name Badge */}
+                                <div className="absolute top-1/4 -translate-y-1/2 -left-4 lg:-left-12 z-20 bg-white px-5 py-3 rounded-xl shadow-xl border border-brand-cream flex items-center gap-3">
+                                    <div className="bg-[#1e78b7] rounded-full p-1 text-white">
+                                        <Check size={16} strokeWidth={4} />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-brand-navy text-sm">Nilfer Begum</p>
+                                        <p className="text-xs text-brand-charcoal/70">Founder & CEO</p>
+                                    </div>
+                                </div>
+
+                                {/* Floating Card 2: Experience Bars */}
+                                <div className="absolute bottom-8 -right-4 lg:-right-8 z-20 bg-white p-5 rounded-xl shadow-xl border border-brand-cream hidden sm:block w-72">
+                                    <p className="font-bold text-brand-charcoal text-sm mb-4">Social Work Experience</p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-xs font-medium text-brand-charcoal w-24">Young Children</span>
+                                            <div className="h-2.5 w-full bg-blue-100 rounded-full overflow-hidden">
+                                                <div className="h-full bg-[#1e78b7] w-[90%] rounded-full"></div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-xs font-medium text-brand-charcoal w-24">Elderly</span>
+                                            <div className="h-2.5 w-full bg-blue-100 rounded-full overflow-hidden">
+                                                <div className="h-full bg-[#1e78b7] w-[95%] rounded-full"></div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-xs font-medium text-brand-charcoal w-24">Special Needs</span>
+                                            <div className="h-2.5 w-full bg-blue-100 rounded-full overflow-hidden">
+                                                <div className="h-full bg-[#1e78b7] w-[85%] rounded-full"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Text - Right */}
+                        <div className="w-full lg:w-7/12">
+                            <p className="text-[#1e78b7] font-bold tracking-[0.15em] text-sm uppercase mb-3">
+                                Meet the Founder
+                            </p>
+                            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-brand-navy mb-8">
+                                Nilfer Begum
+                            </h2>
+
+                            <div className="space-y-6 text-brand-charcoal leading-relaxed mb-8 text-lg">
+                                <p>
+                                    A certified social worker with a Bachelor of Social Work. Her extensive experience working with families with young children, the elderly, and those with special needs informs her deep understanding of the challenges such families face.
+                                </p>
+                                <p>
+                                    With ADEL Employment, Nilfer has created a service that not only supports household chores but significantly improves family dynamics.
+                                </p>
+                            </div>
+
+                            <ul className="space-y-3">
+                                <li className="flex items-center gap-3">
+                                    <div className="bg-brand-navy p-1 rounded-full text-white flex-shrink-0">
+                                        <Check size={16} strokeWidth={3} />
+                                    </div>
+                                    <span className="text-brand-navy font-medium">Singapore Licensed Agency</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="bg-brand-navy p-1 rounded-full text-white flex-shrink-0">
+                                        <Check size={16} strokeWidth={3} />
+                                    </div>
+                                    <span className="text-brand-navy font-medium">Ethical Recruitment</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <div className="bg-brand-navy p-1 rounded-full text-white flex-shrink-0">
+                                        <Check size={16} strokeWidth={3} />
+                                    </div>
+                                    <span className="text-brand-navy font-medium">Client-Focused Service</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Co-Founder Profile Section */}
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 mt-28 pt-20 border-t border-brand-cream/50">
+                        {/* Co-Founder Photo - Right */}
+                        <div className="w-full lg:w-5/12 max-w-sm lg:max-w-none mx-auto">
+                            <div className="relative mt-8 lg:mt-0">
+                                {/* Blue frame behind image to match design */}
+                                <div className="absolute inset-0 border-[3px] border-[#1e78b7] rounded-xl transform -translate-x-4 translate-y-4 bg-gradient-to-bl from-transparent to-blue-50/50"></div>
+                                <img
+                                    src="/founder-2.png?v=2"
+                                    alt="Roshan"
+                                    className="relative z-10 w-full aspect-[4/5] object-cover object-top rounded-xl shadow-lg border-4 border-white"
+                                />
+
+                                {/* Floating Card 1: Name Badge */}
+                                <div className="absolute top-1/4 -translate-y-1/2 -right-4 lg:-right-12 z-20 bg-white px-5 py-3 rounded-xl shadow-xl border border-brand-cream flex items-center gap-3">
+                                    <div className="bg-[#1e78b7] rounded-full p-1 text-white">
+                                        <Check size={16} strokeWidth={4} />
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-brand-navy text-sm">Roshan</p>
+                                        <p className="text-xs text-brand-charcoal/70">Co-Founder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Text - Left */}
+                        <div className="w-full lg:w-7/12">
+                            <p className="text-[#1e78b7] font-bold tracking-[0.15em] text-sm uppercase mb-3">
+                                Meet the Co-Founder
+                            </p>
+                            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-brand-navy mb-8">
+                                Roshan
+                            </h2>
+
+                            <div className="space-y-6 text-brand-charcoal leading-relaxed cursor-default text-lg">
+                                <p>
+                                    A public service professional with over 15 years of experience in the civil service, supported by Diplomas in Security & Fire Safety Studies and Legal Executive Studies. Former Combat Medic and Senior Medic trained in SAF medical institutions.
+                                </p>
+                                <p>
+                                    Throughout my career, I have been guided by a simple principle: service above self. My journey began in the SAF Medical Training Institute, where serving as a Senior Combat Medic taught me the value of composure and precision under pressure. These lessons followed me into a 15-year career as a civil servant, where I was honored to receive commendations for efficiency and excellence.
+                                </p>
+                                <p>
+                                    Bridging my public service experience with ADEL Employment Agency, I apply this same operational discipline to ensure that families receive reliable, well-trained domestic helpers. It isn't just about placements—it's about ensuring every family receives the order, safety, and dedicated support they truly deserve.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

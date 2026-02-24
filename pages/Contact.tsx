@@ -59,7 +59,7 @@ export const Contact: React.FC = () => {
                                 <div className="bg-white p-3 rounded-full shadow-sm text-brand-gold"><MapPin size={24} /></div>
                                 <div>
                                     <h4 className="font-bold text-brand-navy">Visit Us</h4>
-                                    <p className="text-brand-charcoal">123 Orchard Road, #05-01<br />Singapore 238888</p>
+                                    <p className="text-brand-charcoal">30 Lor Tanggam<br />Singapore 798730</p>
                                 </div>
                             </div>
                         </div>

@@ -292,7 +292,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           </div>
 
           <div className="border-t border-[#2a4d75] pt-6 text-center text-sm text-brand-beige">
-            <p>&copy; 2024 ADEL Pte Ltd. All rights reserved. | Licence No: 23C1784 | UEN: 53470053E</p>
+            <p>&copy; 2024 ADEL EMPLOYMENT. All rights reserved. | Licence No: 23C1784 | UEN: 53470053E</p>
             <p className="mt-3 text-xs opacity-60">
               Website by{' '}
               <a
