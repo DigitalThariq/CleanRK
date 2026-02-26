@@ -84,21 +84,6 @@ const LeaderCard: React.FC<LeaderProps> = ({
                 </p>
             </blockquote>
         </div>
-
-        {/* ── Official Registration Block ── */}
-        <div className="bg-[#f2f4f7] border-t-[3px] border-[#C9A84C] rounded-2xl p-6 lg:p-8 text-center w-full shadow-sm">
-            <p className="text-[#888] text-[10px] font-bold tracking-[0.22em] uppercase mb-3">
-                Official Registration
-            </p>
-            <p className="text-[#2E2E2E] text-[15px] leading-relaxed mb-4">
-                <span className="font-bold text-brand-navy block text-[17px] uppercase tracking-wide mb-1.5">{name}</span>
-                is registered as a Key Appointment Holder<br />
-                on behalf of <strong>ADEL Employment Agency</strong>.
-            </p>
-            <p className="text-brand-navy text-[15px] font-medium">
-                EA Registration No: <span className="font-bold tracking-wide">{regNo}</span>
-            </p>
-        </div>
     </div>
 );
 
@@ -235,40 +220,49 @@ export const About: React.FC = () => {
                             Glimpses of our rigorous training sessions, community building, and the dedicated individuals who make ADEL special.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="md:col-span-2 lg:col-span-2 row-span-2 relative group overflow-hidden rounded-xl shadow-md h-96">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px] grid-flow-dense">
+                        {/* Image 1: Large Feature (Spans 2 cols, 2 rows) */}
+                        <div className="md:col-span-2 row-span-2 relative group overflow-hidden rounded-xl shadow-md h-full">
                             <img src="/gallery-group-outdoor.png" alt="ADEL Community Group Photo"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <p className="text-white font-medium">Building a supportive community</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <p className="text-white font-medium text-lg">Building a supportive community</p>
                             </div>
                         </div>
-                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64 md:h-96">
+
+                        {/* Image 2: Standard (Spans 1 col, 1 row) */}
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-full">
                             <img src="/gallery-training-baby.png" alt="Infant Care Training"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white font-medium">Specialized Infant Care Training</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                <p className="text-white font-medium">Specialized Infant Care</p>
                             </div>
                         </div>
-                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+
+                        {/* Image 3: Standard (Spans 1 col, 1 row) */}
+                        <div className="relative group overflow-hidden rounded-xl shadow-md h-full">
                             <img src="/gallery-training-patient.png" alt="Patient Care Training"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white font-medium">Professional Elderly &amp; Patient Care</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                <p className="text-white font-medium">Elderly &amp; Patient Care</p>
                             </div>
                         </div>
-                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+
+                        {/* Image 4: Tall/Wide Variation based on flow (Spans 1 col, 1 row - fits row 2 implicitly based on dense flow, or wraps based on screen size) */}
+                        <div className="md:col-span-1 lg:col-span-2 row-span-1 relative group overflow-hidden rounded-xl shadow-md h-full">
                             <img src="/gallery-cleaning.png" alt="Housekeeping Training"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white font-medium">Meticulous Housekeeping Standards</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                <p className="text-white font-medium">Meticulous Housekeeping</p>
                             </div>
                         </div>
-                        <div className="relative group overflow-hidden rounded-xl shadow-md h-64">
+
+                        {/* Image 5: Standard (Spans 1 col, 1 row) */}
+                        <div className="md:col-span-1 row-span-1 relative group overflow-hidden rounded-xl shadow-md h-full">
                             <img src="/gallery-classroom.png" alt="Classroom Training"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white font-medium">Comprehensive Classroom Education</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                                <p className="text-white font-medium">Classroom Education</p>
                             </div>
                         </div>
                     </div>
